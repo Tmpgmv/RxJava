@@ -8,14 +8,14 @@
 
 Система использует **цепочку ответственности**: каждый оператор возвращает новый `Observable`, а реальная работа начинается только при подписке конечного `Observer`.
 
-```
+
 Observable.create(source)
 ↓ .filter(predicate)
 ↓ .map(transformer)
 ↓ .subscribeOn(scheduler)
 ↓ .observeOn(scheduler)
 ↓ .subscribe(observer) ← ТОЛЬКО ЗДЕСЬ выполняется цепочка!
-```
+
 
 ### Основные компоненты
 
